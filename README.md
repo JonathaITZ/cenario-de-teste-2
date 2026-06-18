@@ -1,12 +1,10 @@
-# Cenario de Teste 2 - Cypress
+# Cenário de Teste 2
 
-Testes E2E com Cypress para o site demo [OrangeHRM](https://opensource-demo.orangehrmlive.com).
+Projeto de estudos com **Cypress** no site demo do [OrangeHRM](https://opensource-demo.orangehrmlive.com) — ambiente aberto pra praticar automação de testes no front-end.
 
-## Pré-requisitos
+## Pra rodar no seu PC
 
-- [Node.js](https://nodejs.org/) (v18 ou superior)
-
-## Instalação
+Precisa ter o [Node.js](https://nodejs.org/) instalado (versão 18 ou superior).
 
 ```bash
 git clone https://github.com/JonathaITZ/cenario-de-teste-2.git
@@ -14,25 +12,38 @@ cd cenario-de-teste-2
 npm install
 ```
 
-## Executar testes
+## Como executar
+
+Quer ver o teste rodando na tela? Use:
 
 ```bash
-# Modo interativo (Cypress Test Runner)
 npm run cy:open
+```
 
-# Modo headless (terminal)
+Pra rodar tudo direto no terminal, sem abrir a interface:
+
+```bash
 npm run cy:run
 ```
 
-## Estrutura
+## O que tem aqui dentro
 
 ```
 cypress/
-├── e2e/          # Cenários de teste
-└── support/      # Configurações e comandos customizados
+├── e2e/          # Os cenários de teste (.cy.js)
+└── support/      # Configurações gerais e comandos que você for criando
 ```
 
-## Credenciais demo
+Hoje o projeto cobre:
 
-- **Usuário:** Admin
-- **Senha:** admin123
+- **Login** — entrar no sistema com credenciais válidas
+- **PIM / Personal Details** — cadastrar funcionário, salvar os dados e excluir no final (pra não deixar lixo no demo)
+
+## Login do site demo
+
+| Campo    | Valor     |
+|----------|-----------|
+| Usuário  | `Admin`   |
+| Senha    | `admin123` |
+
+Essas credenciais são públicas — o próprio site deixa visível na tela de login.
