@@ -9,7 +9,7 @@ Testes E2E com Cypress para o site demo [OrangeHRM](https://opensource-demo.oran
 ## Instalação
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/JonathaITZ/cenario-de-teste-2.git
 cd cenario-de-teste-2
 npm install
 ```
