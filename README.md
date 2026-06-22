@@ -30,20 +30,41 @@ npm run cy:run
 
 ```
 cypress/
-├── e2e/          # Os cenários de teste (.cy.js)
-└── support/      # Configurações gerais e comandos que você for criando
+├── e2e/
+│   ├── exemplo.cy.js           # Login com credenciais válidas
+│   ├── login-invalido.cy.js    # Login com erro e teste de segurança
+│   └── personal-details.cy.js  # Cadastro e exclusão de funcionário
+└── support/                    # Configurações gerais e comandos customizados
 ```
 
-Hoje o projeto cobre:
+## Cenários de teste
 
-- **Login** — entrar no sistema com credenciais válidas
-- **PIM / Personal Details** — cadastrar funcionário, salvar os dados e excluir no final (pra não deixar lixo no demo)
+### Login válido (`exemplo.cy.js`)
+- Acessa a tela de login
+- Entra com credenciais corretas
+- Valida que saiu do login e chegou no Dashboard
+
+### Login inválido (`login-invalido.cy.js`)
+- Tenta entrar com senha errada
+- Valida que permanece na tela de login
+- Confirma a mensagem **Invalid credentials**
+- Tenta acessar a home (`/dashboard`) direto pela URL, sem login
+- Valida que o sistema redireciona para o login (proteção de rota)
+
+### PIM / Personal Details (`personal-details.cy.js`)
+- Cria um funcionário novo
+- Salva os dados em Personal Details
+- Busca na lista e exclui no final (limpeza do teste)
 
 ## Login do site demo
 
-| Campo    | Valor     |
-|----------|-----------|
-| Usuário  | `Admin`   |
+| Campo    | Valor      |
+|----------|------------|
+| Usuário  | `Admin`    |
 | Senha    | `admin123` |
 
 Essas credenciais são públicas — o próprio site deixa visível na tela de login.
+
+## Repositório
+
+https://github.com/JonathaITZ/cenario-de-teste-2
